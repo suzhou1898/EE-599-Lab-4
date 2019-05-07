@@ -1,0 +1,6 @@
+Name: Junquan Yu
+E-mail: Junquany@usc.edu
+Summary of Program: According to the Lab4 document PDF, i wrote this program to do the fibonacci burnt pancake sorting problem. This program can read the data with the specific format from the "input.txt" file as its inputs and write the final results to the specific output file as required.
+Other Information: I can ran my code smoothly on the IDE in my Windows operating system and
+i can get exactly correct results. However, when i ran it on the virtualBox, it just showed 
+that segmentation failure for some unknown reasons. The professor said if you encounter the similar scenario when grading my this lab, you can check my code with the IDE on the Windows operating system, and i can promise it can work.

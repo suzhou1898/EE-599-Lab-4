@@ -1,0 +1,69 @@
+C:\Users\81425\Desktop\1>gdb brokengdb1
+GNU gdb (GDB) 7.6.1
+Copyright (C) 2013 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "mingw32".
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>...
+Reading symbols from C:\Users\81425\Desktop\1\brokengdb1.exe...done.
+(gdb) l
+warning: Source file is more recent than executable.
+1       #include<iostream>
+2
+3       using namespace std;
+4
+5       long factorial(int n);
+6
+7       int main()
+8       {
+9           int n;
+10          cout<<"Please enter n:"<<endl;
+(gdb)
+11          cin>>n;
+12          long val=factorial(n);
+13          cout<<"n factorial is: "<<val<<endl;
+14
+15          return 0;
+16      }
+17
+18      long factorial(int n)
+19      {
+20
+(gdb)
+21          if(n)
+22              return  factorial(n--)*n;
+23          else return 1;
+24
+25
+26      }
+(gdb) b 21
+Breakpoint 1 at 0x4014b6: file brokengdb1.cpp, line 21.
+(gdb) r
+Starting program: C:\Users\81425\Desktop\1/brokengdb1.exe
+[New Thread 6064.0x2928]
+Please enter n:
+3
+
+Breakpoint 1, factorial (n=3) at brokengdb1.cpp:21
+21          if(n)
+(gdb) print n
+$1 = 3
+(gdb) s
+22              return  factorial(n--)*n;
+(gdb) s
+
+Breakpoint 1, factorial (n=3) at brokengdb1.cpp:21
+21          if(n)
+(gdb) print n
+$2 = 3
+(gdb) s
+22              return  factorial(n--)*n;
+(gdb) s
+
+Breakpoint 1, factorial (n=3) at brokengdb1.cpp:21
+21          if(n)
+(gdb) print n
+$3 = 3
